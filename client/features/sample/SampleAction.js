@@ -3,7 +3,9 @@ import $ from 'jquery';
 
 //example of an redux action
 export function someAction(payload) {
-	return {type: 'SOMEACTIONS', payload: payload};
+	return {
+		type: 'SOMEACTIONS',
+		payload: payload};
 }
 
 
@@ -11,7 +13,7 @@ export function someAction(payload) {
 export function fetchSomething() {
 
 	const request = $.ajax({
-		url: "https://c4q-dot-searchbertha-hrd.appspot.com/_ah/apiKey",
+		url: "https://restcountries.eu/rest/v1/alpha/co",
 		success: function(data) {
 			console.log('data', data)
 		}
@@ -22,4 +24,5 @@ export function fetchSomething() {
 			dispatch({type: 'FETCH_SOMETHING', payload: data});
 		});
 	};
+
 }

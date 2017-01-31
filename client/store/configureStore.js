@@ -5,12 +5,8 @@ import logger from 'redux-logger';//logs actions, prev state and next state to t
 import thunk from 'redux-thunk';
 
 
-//syncs redux state to local storage
-import persistState from 'redux-localstorage';
-
-
 const enhancer = compose(
-	applyMiddleware( logger(),thunk,reduxImmutableStateInvariant()), persistState()
+	applyMiddleware( logger(),thunk,reduxImmutableStateInvariant())
 );
 
 
@@ -18,5 +14,7 @@ export default function configureStore(initialState){
 	return createStore(
 		reducer,
 		initialState,
-		enhancer);
+		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+		enhancer
+	);
 }
