@@ -15,7 +15,7 @@ export function fetchSomething() {
 	const request = $.ajax({
 		url: "https://restcountries.eu/rest/v1/alpha/co",
 		success: function(data) {
-			console.log('data', data)
+			console.log('data', data);
 		}
 	});
 

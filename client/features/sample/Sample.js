@@ -1,6 +1,6 @@
 //This component handles the App template used on every page
 import React, {Component} from 'react';
-import {fetchSomething} from './SampleAction'
+import {fetchSomething} from './SampleAction';
 
 class Sample extends Component{
 	render(){
